@@ -26,7 +26,7 @@ client_script {
     'client/main.lua'
 }
 
-ui_page 'nui/index.html'
+ui_page 'nui/index_pt.html'
 
 files {
     'nui/images/logo.png',
@@ -34,7 +34,7 @@ files {
     'nui/scripting/external/jquery/jquery.js',
     'nui/scripting/jquery-ui.js',
     'nui/style.css',
-    'nui/index.html',
+    'nui/index_pt.html',
     'nui/qb-banking.js',
 }
 
