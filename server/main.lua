@@ -289,7 +289,7 @@ RegisterNetEvent('qb-banking:createBankCard', function(pin)
     TriggerClientEvent('qb-banking:openBankScreen', src)
     TriggerClientEvent('qb-banking:successAlert', src, Lang:t('success.debit_card'))
 
-    TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'lightgreen', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** successfully ordered a debit card")
+    TriggerEvent('qb-log:server:CreateLog', src, 'banking', 'Banking', 'lightgreen', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** successfully ordered a debit card")
 end)
 
 RegisterNetEvent('qb-banking:doQuickDeposit', function(amount)
@@ -307,7 +307,7 @@ RegisterNetEvent('qb-banking:doQuickDeposit', function(amount)
         if bank then
             TriggerClientEvent('qb-banking:openBankScreen', src)
             TriggerClientEvent('qb-banking:successAlert', src, Lang:t('success.cash_deposit', {value = amount}))
-            TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'lightgreen', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a cash deposit of $"..amount.." successfully.")
+            TriggerEvent('qb-log:server:CreateLog', src, 'banking', 'Banking', 'lightgreen', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a cash deposit of $"..amount.." successfully.")
         end
     end
 end)
@@ -335,7 +335,7 @@ RegisterNetEvent('qb-banking:doQuickWithdraw', function(amount, _)
         if cash then
             TriggerClientEvent('qb-banking:openBankScreen', src)
             TriggerClientEvent('qb-banking:successAlert', src, Lang:t('success.cash_withdrawal', {value = amount}))
-            TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'red', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a cash withdrawal of $"..amount.." successfully.")
+            TriggerEvent('qb-log:server:CreateLog', src, 'banking', 'Banking', 'red', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a cash withdrawal of $"..amount.." successfully.")
         end
     end
 end)
@@ -373,7 +373,7 @@ RegisterNetEvent('qb-banking:savingsDeposit', function(amount)
         while savings == nil do Wait(0) end
         TriggerClientEvent('qb-banking:openBankScreen', src)
         TriggerClientEvent('qb-banking:successAlert', src, Lang:t('success.savings_deposit', {value = tostring(amount)}))
-        TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'lightgreen', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a savings deposit of $"..tostring(amount).." successfully..")
+        TriggerEvent('qb-log:server:CreateLog', src, 'banking', 'Banking', 'lightgreen', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a savings deposit of $"..tostring(amount).." successfully..")
     end
 end)
 
@@ -390,7 +390,7 @@ RegisterNetEvent('qb-banking:savingsWithdraw', function(amount)
         while savings == nil do Wait(0) end
         TriggerClientEvent('qb-banking:openBankScreen', src)
         TriggerClientEvent('qb-banking:successAlert', src, Lang:t('success.savings_withdrawal', {value = tostring(amount)}))
-        TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'red', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a savings withdrawal of $"..tostring(amount).." successfully.")
+        TriggerEvent('qb-log:server:CreateLog', src, 'banking', 'Banking', 'red', "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** made a savings withdrawal of $"..tostring(amount).." successfully.")
     end
 end)
 
@@ -401,7 +401,7 @@ RegisterNetEvent('qb-banking:createSavingsAccount', function()
     repeat Wait(0) until success ~= nil
     TriggerClientEvent('qb-banking:openBankScreen', src)
     TriggerClientEvent('qb-banking:successAlert', src, Lang:t('success.opened_savings'))
-    TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', "lightgreen", "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** opened a savings account")
+    TriggerEvent('qb-log:server:CreateLog', src, 'banking', 'Banking', "lightgreen", "**"..GetPlayerName(xPlayer.PlayerData.source) .. " (citizenid: "..xPlayer.PlayerData.citizenid.." | id: "..xPlayer.PlayerData.source..")** opened a savings account")
 end)
 
 
